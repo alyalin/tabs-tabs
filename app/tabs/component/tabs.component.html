@@ -1,10 +1,11 @@
 <ul class="tabs__titles">
-  <li class="tabs__title" *ngFor="let tab of tabs" (click)="handleClickOnTab(tab.tabId)">
-    <div [innerHTML]="tab?.titleTpl?.elementRef?.nativeElement?.innerHTML | sanitizeHtml">
-    </div>
-  </li>
+	<li class="tabs__title" *ngFor="let tab of tabs" (click)="handleClickOnTab(tab.tabId)">
+		<div [innerHTML]="tab?.titleTpl?.elementRef?.nativeElement?.innerHTML | sanitizeHtml">
+		</div>
+	</li>
 </ul>
 
 <ng-container *ngFor="let tab of tabs">
-  <div *ngIf="(activeId$ | async) === tab.tabId" [innerHTML]="tab?.contentTpl?.elementRef?.nativeElement?.innerHTML | sanitizeHtml"></div>
+	<div *ngIf="(activeId$ | async) === tab.tabId"
+		[innerHTML]="tab?.contentTpl?.elementRef?.nativeElement?.innerHTML | sanitizeHtml"></div>
 </ng-container>

@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class TabIdService {
   private startNum = 0;
-  private id$ = new BehaviorSubject<string>('tab-id-1');
-  
+  private id$ = new BehaviorSubject<string>("tab-id-1");
+
   resetId() {
-    this.id$.next('tab-id-1');
+    this.id$.next("tab-id-1");
   }
 
   startAgain() {
@@ -17,7 +17,7 @@ export class TabIdService {
   }
 
   get generate(): string {
-    return `tab-id-${this.startNum += 1}`;
+    return `tab-id-${(this.startNum += 1)}`;
   }
 
   get currentIdObs$(): Observable<string> {

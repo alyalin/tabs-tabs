@@ -1,9 +1,8 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef } from "@angular/core";
 
 @Directive({
-  selector: 'tab-title'
+  selector: "tab-title"
 })
-
 export class TabTitle {
   constructor(public elementRef: ElementRef) {}
 }
