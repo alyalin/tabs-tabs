@@ -16,7 +16,7 @@ export class TabIdService {
     this.startNum = 0;
   }
 
-  get generate() {
+  get generate(): string {
     return `tab-id-${this.startNum += 1}`;
   }
 
